@@ -19,7 +19,7 @@
   "gnetId": 10481,
   "graphTooltip": 1,
   "id": 194,
-  "iteration": 1615494481095,
+  "iteration": 1615552956399,
   "links": [],
   "panels": [
     {
@@ -131,6 +131,7 @@
         "sort": 2,
         "value_type": "cumulative"
       },
+      "transparent": true,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -347,7 +348,11 @@
           "color": {
             "mode": "palette-classic"
           },
-          "custom": {},
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "decimals": 2,
           "mappings": [],
           "thresholds": {
             "mode": "percentage",
@@ -379,7 +384,7 @@
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "mean"
           ],
           "fields": "",
           "values": false
@@ -430,6 +435,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Estimated charges",
+      "transparent": true,
       "type": "bargauge"
     },
     {
@@ -444,11 +450,25 @@
       "error": false,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "grid": {},
       "gridPos": {
@@ -484,8 +504,8 @@
       },
       "percentage": false,
       "pluginVersion": "7.3.3",
-      "pointradius": 5,
-      "points": false,
+      "pointradius": 0.5,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -542,6 +562,7 @@
         "sort": 2,
         "value_type": "cumulative"
       },
+      "transparent": true,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -584,7 +605,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 3,
         "w": 24,
         "x": 0,
         "y": 28
@@ -593,7 +614,7 @@
       "isNew": true,
       "links": [],
       "options": {
-        "content": "<a href=\"http://www.monitoringartist.com\" target=\"_blank\" title=\"Dashboard maintained by Monitoring Artist - DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring\"><img src=\"https://monitoringartist.github.io/monitoring-artist-logo-grafana.png\" height=\"30px\" /></a> | \n<a target=\"_blank\" href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/billing-metricscollected.html\">AWS CloudWatch billing documentation</a> | \n<a target=\"_blank\" href=\"https://grafana.com/dashboards/139\">Installed from Grafana.com dashboards</a>",
+        "content": "<a target=\"_blank\" href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/billing-metricscollected.html\">AWS CloudWatch billing documentation</a>  ",
         "mode": "html"
       },
       "pluginVersion": "7.3.3",
@@ -633,12 +654,15 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
+          "tags": [],
           "text": [
-            "AmazonVPC"
+            "AWSLambda",
+            "AmazonCloudWatch"
           ],
           "value": [
-            "AmazonVPC"
+            "AWSLambda",
+            "AmazonCloudWatch"
           ]
         },
         "datasource": "CloudWatch",
@@ -664,7 +688,7 @@
     ]
   },
   "time": {
-    "from": "now-30d",
+    "from": "now-6M",
     "to": "now"
   },
   "timepicker": {
@@ -694,6 +718,6 @@
   },
   "timezone": "browser",
   "title": "AWS Billing per Service",
-  "uid": "AWSBill",
-  "version": 1
+  "uid": "AWSBillin",
+  "version": 10
 }
